@@ -1,0 +1,62 @@
+<mat-card>
+  <mat-card-content>
+    <div fxLayout>
+      <h2 *ngIf="title?.trim()" fxFlex fxFlexAlign="flex-end">
+        Results for {{ title }}
+      </h2>
+      <mat-spinner [diameter]="70" *ngIf="isLoading"></mat-spinner>
+      <mat-paginator
+        *ngIf="movies?.length"
+        [pageIndex]="page - 1"
+        [length]="totalResults"
+        [pageSize]="pageSize"
+        (page)="[getNext($event)]"
+        fxFlex
+      >
+      </mat-paginator>
+    </div>
+    <ng-container *ngIf="!isLoading">
+      <ng-container *ngIf="movies">
+        <div
+          *ngFor="let movie of movies; let i = index"
+          [@swingInAndOut]
+          class="list-item"
+        >
+          <div fxLayout>
+            <div fxFlex>
+              <img
+                *ngIf="movie.Poster != 'N/A'; else defaultImg"
+                src="{{ movie.Poster }}"
+                class="img-poster"
+              />
+              <ng-template #defaultImg>
+                <mat-icon class="icon-movie">movie</mat-icon>
+              </ng-template>
+            </div>
+            <div fxFlex fxLayout="column">
+              <div fxFlex class="padding-right-sm">{{ movie.Title }}</div>
+              <div fxFlex>{{ movie.Year }}</div>
+            </div>
+            <div fxFlex class="nominate-movie">
+              <button
+                mat-raised-button
+                (click)="onNominate(movie)"
+                [disabled]="isMovieNominated(movie)"
+              >
+                Nominate
+              </button>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="error">
+        {{ error }}
+      </ng-container>
+      <ng-container *ngIf="!error && !title?.trim()">
+        <h2>Search for movies will appear here.</h2>
+        <br />
+      </ng-container>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

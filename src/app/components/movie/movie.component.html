@@ -1,0 +1,27 @@
+<h1>The Shoppies</h1>
+<movie-search (update)="searchMovies($event)"></movie-search>
+<div class="alert-success margin-top-md" *ngIf="isNominationsLenMax()">
+  Congratulations you have finished nominating the movies.
+  <mat-icon class="trophy-icon">emoji_events</mat-icon>
+</div>
+<div class="margin-top-md">
+  <div fxLayout="row wrap" fxLayoutGap="10px grid">
+    <movie-search-results
+      [error]="error"
+      [title]="title"
+      [movies]="movies"
+      [nominations]="nominations"
+      [isLoading]="isLoading"
+      [totalResults]="totalResults"
+      [page]="page"
+      (update)="onNominationsUpdate($event)"
+      (nextPage)="navigateNextPage($event)"
+      fxFlex
+    ></movie-search-results>
+    <nominations
+      [movies]="nominations"
+      (delete)="onNominationDelete($event)"
+      fxFlex
+    ></nominations>
+  </div>
+</div>

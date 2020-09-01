@@ -1,0 +1,43 @@
+<mat-card>
+  <mat-card-content>
+    <div fxLayout>
+      <h2 fxFlex>Nominations</h2>
+      <button color="primary" mat-mini-fab aria-label="Share nominations" [cdkCopyToClipboard]="getRouterUrl()" (click)="onCopyNomLink()">
+        <mat-icon>share</mat-icon>
+      </button>
+    </div>
+    <ng-container *ngIf="movies && movies.length; else noNominations">
+      <div
+        *ngFor="let movie of movies; let i = index"
+        [@swingInAndOut]
+        class="list-item"
+      >
+        <div fxLayout>
+          <div fxFlex>
+            <img
+              *ngIf="movie.Poster != 'N/A'; else defaultImg"
+              src="{{ movie.Poster }}"
+              class="img-poster"
+            />
+            <ng-template #defaultImg>
+              <mat-icon class="icon-movie">movie</mat-icon>
+            </ng-template>
+          </div>
+          <div fxFlex fxLayout="column">
+            <div fxFlex class="padding-right-sm">{{ movie.Title }}</div>
+            <div fxFlex>{{ movie.Year }}</div>
+          </div>
+          <div fxFlex class="remove-movie">
+            <button mat-raised-button (click)="onRemove(i)">Remove</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noNominations>
+      <div>
+        No Nominations exist. Click on nominate button on the search result to
+        nominate.
+      </div>
+    </ng-template>
+  </mat-card-content>
+</mat-card>

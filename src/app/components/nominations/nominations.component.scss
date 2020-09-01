@@ -1,0 +1,24 @@
+.list-item {
+  border-radius: 5px;
+  padding-top: 15px;
+  margin-top: 10px;
+  background: linear-gradient(to right, rgb(213, 133, 255) 0%, rgb(0, 255, 238) 100%);
+  color: white;
+}
+
+.img-poster {
+  height: 100px;
+  width: 80px;
+}
+
+.icon-movie {
+  font-size: 100px;
+}
+
+.remove-movie {
+  text-align: center;
+}
+
+.icon-share {
+  cursor: pointer;
+}

@@ -3,7 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  // TODO: Remove this api key.
+  omdbApiKey: "e253e68e",
+  // TODO: Remove firebase config.
+  firebaseConfig: {
+    apiKey: "AIzaSyAf5Jk1CEt3OijOc3eO5OChm4bYuxAVPvI",
+    authDomain: "ground-platform-209dc.firebaseapp.com",
+    databaseURL: "ground-platform-209dc.firebaseapp.com",
+    projectId: "ground-platform-209dc",
+    storageBucket: "ground-platform-209dc.appspot.com",
+    messagingSenderId: "478560441988"
+  }, 
+  production: false,
 };
 
 /*

@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: cornflowerblue;
+  color: white;
+}
+
+.margin-sm {
+  margin: 5px;
+}
+
+.margin-md {
+  margin: 10px;
+}
+
+.margin-lg {
+  margin: 20px;
+}
+
+.margin-top-md {
+  margin-top: 10px;
+}
+
+.padding-right-sm {
+  padding-right: 5px;
+}
+
+.success {
+  background: #5cb85c;
+}
+
+.danger {
+  background: #d9534f;
+}
+
+.mat-button-focus-overlay {
+  background-color: transparent !important;
+}
