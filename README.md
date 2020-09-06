@@ -6,7 +6,7 @@
 
 ## Running Project locally.
 
-1. git clone [project url](https://github.com/parulraheja98/shoppies.git)
+1. Run git clone https://github.com/parulraheja98/shoppies.git.
 2. Run npm install -g @angular/cli to install angular cli.
 3. Get omdb api key from [url](http://www.omdbapi.com/apikey.aspx).
 4. Go to src/environments/environment.ts and your add your api key, (omdbApiKey: YOUR_API_KEY)
