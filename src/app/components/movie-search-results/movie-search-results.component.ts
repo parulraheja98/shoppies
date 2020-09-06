@@ -1,16 +1,16 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { Movie } from "../../shared/models/movie.model";
-import { swingInAndOut } from "src/app/shared/animations/trigger";
-import { MatDialog } from "@angular/material/dialog";
-import { WarningComponent } from "../warning/warning.component";
-import { MatSnackBar } from "@angular/material/snack-bar";
-import { NominationService } from "src/app/services/nomination.service";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Movie } from '../../shared/models/movie.model';
+import { swingInAndOut } from 'src/app/shared/animations/trigger';
+import { MatDialog } from '@angular/material/dialog';
+import { WarningComponent } from '../warning/warning.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { NominationService } from 'src/app/services/nomination.service';
 import { PageEvent } from '@angular/material/paginator';
 
 @Component({
-  selector: "movie-search-results",
-  templateUrl: "./movie-search-results.component.html",
-  styleUrls: ["./movie-search-results.component.scss"],
+  selector: 'movie-search-results',
+  templateUrl: './movie-search-results.component.html',
+  styleUrls: ['./movie-search-results.component.scss'],
   animations: [swingInAndOut],
 })
 export class MovieSearchResultsComponent implements OnInit {
@@ -49,7 +49,7 @@ export class MovieSearchResultsComponent implements OnInit {
     this.dialog.open(WarningComponent, {
       data: {
         message:
-          "Nominations more than 5 are not allowed. Please delete existing nominations.",
+          'Nominations more than 5 are not allowed. Please delete existing nominations.',
       },
     });
   }
@@ -63,7 +63,7 @@ export class MovieSearchResultsComponent implements OnInit {
       /* action= */ null,
       {
         duration: 2000,
-        panelClass: ["success"],
+        panelClass: ['success'],
       }
     );
   }
@@ -71,12 +71,12 @@ export class MovieSearchResultsComponent implements OnInit {
    * Check if a movie is already nominated.
    */
   isMovieNominated(movie: Movie) {
-    return this.nominations.find((nom) => nom.imdbID === movie.imdbID);
+    return this.nominations?.find((nom) => nom.imdbID === movie.imdbID);
   }
 
   /*
-  * Get next page movie search results.
-  */
+   * Get next page movie search results.
+   */
   getNext(event: PageEvent) {
     const page = event.pageIndex + 1;
     this.nextPage.emit(page);

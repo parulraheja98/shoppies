@@ -1,12 +1,11 @@
-import { Injectable } from "@angular/core";
-import { AngularFirestore, DocumentData } from "@angular/fire/firestore";
-import { Movie } from "../shared/models/movie.model";
+import { Injectable } from '@angular/core';
+import { AngularFirestore, DocumentData } from '@angular/fire/firestore';
+import { Movie } from '../shared/models/movie.model';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class NominationService {
-
   static MAX_NOMINATIONS_LENGTH = 5;
 
   constructor(private db: AngularFirestore) {}
@@ -16,7 +15,7 @@ export class NominationService {
    */
   async createNomination(nomination: Movie): Promise<void> {
     return await this.db
-      .collection("nominations")
+      .collection('nominations')
       .doc(nomination.imdbID)
       .set(nomination);
   }
@@ -25,12 +24,13 @@ export class NominationService {
    * Get all existing nominations.
    */
   async getNominations(): Promise<DocumentData[]> {
+    debugger;
     return new Promise((resolve, reject) => {
       this.db.firestore
-        .collection("nominations")
+        .collection('nominations')
         .get()
         .then((snapshot) => {
-          let nominations = snapshot.docs.map((doc) => doc.data());
+          const nominations = snapshot.docs.map((doc) => doc.data());
           resolve(nominations);
         })
         .catch((err) => reject(err));
@@ -41,6 +41,6 @@ export class NominationService {
    * Delete nomination by a given id.
    */
   async deleteNomination(id: string): Promise<void> {
-    return await this.db.collection("nominations").doc(id).delete();
+    return await this.db.collection('nominations').doc(id).delete();
   }
 }

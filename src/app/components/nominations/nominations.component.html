@@ -2,7 +2,13 @@
   <mat-card-content>
     <div fxLayout>
       <h2 fxFlex>Nominations</h2>
-      <button color="primary" mat-mini-fab aria-label="Share nominations" [cdkCopyToClipboard]="getRouterUrl()" (click)="onCopyNomLink()">
+      <button
+        color="primary"
+        mat-mini-fab
+        aria-label="Share nominations"
+        [cdkCopyToClipboard]="getRouterUrl()"
+        (click)="onCopyNomLink()"
+      >
         <mat-icon>share</mat-icon>
       </button>
     </div>

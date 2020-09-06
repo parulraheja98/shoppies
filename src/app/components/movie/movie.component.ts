@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { MovieService } from "src/app/services/movie.service";
-import { Movie } from "src/app/shared/models/movie.model";
-import { NominationService } from "src/app/services/nomination.service";
-import { MovieSearchResponse } from "src/app/shared/models/movie-search-response.model";
+import { Component, OnInit } from '@angular/core';
+import { MovieService } from 'src/app/services/movie.service';
+import { Movie } from 'src/app/shared/models/movie.model';
+import { NominationService } from 'src/app/services/nomination.service';
+import { MovieSearchResponse } from 'src/app/shared/models/movie-search-response.model';
 
 @Component({
-  selector: "movie",
-  templateUrl: "./movie.component.html",
-  styleUrls: ["./movie.component.scss"],
+  selector: 'movie',
+  templateUrl: './movie.component.html',
+  styleUrls: ['./movie.component.scss'],
 })
 export class MovieComponent implements OnInit {
   movies: Movie[];
@@ -53,10 +53,10 @@ export class MovieComponent implements OnInit {
 
   handleErrorSearch(error: string) {
     switch (error) {
-      case "Incorrect IMDb ID.":
-        return "Invalid Movie entered.";
-      case "Too many results.":
-        return "There are too many results found. Please try again with specific characters.";
+      case 'Incorrect IMDb ID.':
+        return 'Invalid Movie entered.';
+      case 'Too many results.':
+        return 'There are too many results found. Please try again with specific characters.';
       default:
         return error;
     }

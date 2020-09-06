@@ -1,10 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: "movie-search",
-  templateUrl: "./movie-search.component.html",
-  styleUrls: ["./movie-search.component.scss"],
+  selector: 'movie-search',
+  templateUrl: './movie-search.component.html',
+  styleUrls: ['./movie-search.component.scss'],
 })
 export class MovieSearchComponent implements OnInit {
   @Output() update = new EventEmitter();
@@ -12,7 +12,7 @@ export class MovieSearchComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     this.movieGroup = this.formBuilder.group({
-      title: "",
+      title: '',
     });
   }
 

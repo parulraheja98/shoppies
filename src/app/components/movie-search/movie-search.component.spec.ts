@@ -8,9 +8,8 @@ describe('MovieSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MovieSearchComponent ]
-    })
-    .compileComponents();
+      declarations: [MovieSearchComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -7,12 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [WarningComponent],
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatIconModule, 
-    FlexLayoutModule
-  ],
-  entryComponents: [WarningComponent]
+  imports: [CommonModule, MatButtonModule, MatIconModule, FlexLayoutModule],
+  entryComponents: [WarningComponent],
 })
-export class WarningModule { }
+export class WarningModule {}
