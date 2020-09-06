@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MovieSearchComponent } from './movie-search.component';
+import { SearchComponent } from './search.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [MovieSearchComponent],
+  declarations: [SearchComponent],
   imports: [
     CommonModule,
     MatInputModule,
@@ -16,6 +16,6 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatIconModule,
   ],
-  exports: [MovieSearchComponent],
+  exports: [SearchComponent],
 })
-export class MovieSearchModule {}
+export class SearchModule {}

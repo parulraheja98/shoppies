@@ -1,5 +1,9 @@
 <h1>The Shoppies</h1>
-<movie-search (update)="searchMovies($event)"></movie-search>
+<search
+  (update)="searchMovies($event)"
+  [heading]="'Movie title'"
+  [placeholder]="'Search movies'"
+></search>
 <div class="alert-success margin-top-md" *ngIf="isNominationsLenMax()">
   Congratulations you have finished nominating the movies.
   <mat-icon class="trophy-icon">emoji_events</mat-icon>

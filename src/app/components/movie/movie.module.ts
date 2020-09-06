@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MovieSearchResultsModule } from '../movie-search-results/movie-search-results.module';
-import { MovieSearchModule } from '../movie-search/movie-search.module';
+import { SearchModule } from '../search/search.module';
 import { NominationsModule } from '../nominations/nominations.module';
 import { MovieComponent } from './movie.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -15,7 +15,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   imports: [
     CommonModule,
     MovieSearchResultsModule,
-    MovieSearchModule,
+    SearchModule,
     NominationsModule,
     FlexLayoutModule,
     HttpClientModule,

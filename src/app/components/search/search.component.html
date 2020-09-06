@@ -1,12 +1,12 @@
 <mat-card>
-  <h2>Movie title</h2>
-  <form [formGroup]="movieGroup">
+  <h2>{{ heading }}</h2>
+  <form [formGroup]="searchGroup">
     <mat-form-field class="field-title" appearance="outline">
       <mat-icon matPrefix>search</mat-icon>
       <input
         matInput
         formControlName="title"
-        placeholder="Search movies"
+        placeholder="{{ placeholder }}"
         class="input-title"
       />
     </mat-form-field>
