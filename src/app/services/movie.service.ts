@@ -12,6 +12,9 @@ export class MovieService {
 
   constructor(private http: HttpClient) {}
 
+  /*
+   * Get movies by title and page number.
+   */
   getMovies(title: string, page: number) {
     let params = new HttpParams();
     params = params.append('s', title);

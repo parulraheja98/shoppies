@@ -51,7 +51,7 @@ export class MovieComponent implements OnInit {
    * Display user-friendly error message for movie search.
    */
 
-  handleErrorSearch(error: string) {
+  private handleErrorSearch(error: string) {
     switch (error) {
       case 'Incorrect IMDb ID.':
         return 'Invalid Movie entered.';
@@ -62,14 +62,17 @@ export class MovieComponent implements OnInit {
     }
   }
 
-  onNominationsUpdate(nomination: Movie) {
+  /*
+   * Updates the nominations list when nomination get added.
+   */
+  onNominationsAdd(nomination: Movie) {
     this.nominations = this.nominations
       ? [nomination, ...this.nominations]
       : [nomination];
   }
 
   /*
-   * Updates the nominations when nomination gets deleted.
+   * Updates the nominations list when nomination gets deleted.
    */
 
   onNominationDelete(nominations: Movie[]) {
@@ -96,7 +99,7 @@ export class MovieComponent implements OnInit {
   /*
    * Get movies by title and page.
    */
-  getMovies(title: string, page: number) {
+  private getMovies(title: string, page: number) {
     this.isLoading = true;
     this.movieService
       .getMovies(title, page)

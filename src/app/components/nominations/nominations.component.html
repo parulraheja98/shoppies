@@ -6,8 +6,8 @@
         color="primary"
         mat-mini-fab
         aria-label="Share nominations"
-        [cdkCopyToClipboard]="getRouterUrl()"
-        (click)="onCopyNomLink()"
+        [cdkCopyToClipboard]="getCurrentUrl()"
+        (click)="onShareNominations()"
       >
         <mat-icon>share</mat-icon>
       </button>

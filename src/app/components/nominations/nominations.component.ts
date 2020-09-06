@@ -50,15 +50,14 @@ export class NominationsComponent implements OnInit {
   /*
    * Returns the current url.
    */
-
-  getRouterUrl() {
+  getCurrentUrl() {
     return window.location.href;
   }
 
   /*
    * Display a toast message when user clicks on share button.
    */
-  onCopyNomLink() {
+  onShareNominations() {
     this.snackbar.open(
       /* message= */ 'Nominations link copied to clipboard',
       /* action= */ null,

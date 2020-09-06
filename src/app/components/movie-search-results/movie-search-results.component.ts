@@ -32,6 +32,9 @@ export class MovieSearchResultsComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /*
+   * Handles the event after nomination button is clicked.
+   */
   onNominate(movie: Movie) {
     // If nominations length is 5 we show warning to delete existing nominations.
     if (this.nominations.length === NominationService.MAX_NOMINATIONS_LENGTH) {
