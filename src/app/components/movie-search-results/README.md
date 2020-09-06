@@ -17,4 +17,4 @@ Movie Search Results component contains the list of movies found by the title.
 
 ## Reference
 
-![alt text](https://images-shoppies-project.s3-us-west-2.amazonaws.com/Screen+Shot+2020-09-06+at+3.01.30+AM.png)
+![](https://images-shoppies-project.s3-us-west-2.amazonaws.com/Screen+Shot+2020-09-06+at+3.01.30+AM.png)

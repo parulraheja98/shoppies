@@ -10,4 +10,4 @@ nominations allowed are 5.
 
 ## Reference
 
-![alt text](https://images-shoppies-project.s3-us-west-2.amazonaws.com/Screen+Shot+2020-09-06+at+2.20.14+AM.png)
+![](https://images-shoppies-project.s3-us-west-2.amazonaws.com/Screen+Shot+2020-09-06+at+2.20.14+AM.png)
